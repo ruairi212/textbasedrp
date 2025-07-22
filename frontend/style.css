@@ -1,29 +1,54 @@
 @import "https://fonts.googleapis.com/css?family=Press%20Start%202P";
 
-html, body{
-    background-color: green;
-    
+html, body {
+    background-color: rgb(167, 201, 167);
+    margin: 0;
+    padding: 0;
 }
+
+.topnav {
+    background-color: rgb(75, 110, 75);
+    overflow: hidden;
+    height: 50px;
+    width: 100%;
+    padding: 0 10px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .topnav a {
-  display: inline;
-  justify-content:right;
-  align-items:right;
-  font-family: 'Press Start 2P';
-  font-size: 1.2rem;
-  line-height: 2;
-  height: 100%;
-  text-transform: uppercase;
+    display: block;
+    font-family: 'Press Start 2P';
+    font-size: 1rem;
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+
+    text-decoration: none;
+    color: #e0ffe0;
+
+    padding: 15px 20px;
 }
-li {
-  float: right;  
-  color: #4FAF44;
-}
-.topnav a:hover{
+
+.topnav a:hover {
     background-color: rgb(157, 212, 157);
     color: black;
 }
 
 .topnav a.active {
-    background-color: rgb(96, 207, 45);
-    color: rgb(50, 100, 9);
+    background-color: rgb(65, 139, 31);
+    color: #e0ffe0;
 }
+
+body {
+    padding-top: 50px;
+}}
