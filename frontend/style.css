@@ -51,4 +51,13 @@ html, body {
 
 body {
     padding-top: 50px;
-}}
+}
+#monsterStats {
+    display: none;
+}
+#stats {
+    border: green;
+    color: black;
+    padding: 5px;
+}
+
