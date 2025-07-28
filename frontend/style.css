@@ -1,4 +1,6 @@
 @import "https://fonts.googleapis.com/css?family=Press%20Start%202P";
+@import 'https://fonts.googleapis.com/css2?family=MedievalSharp&family=New+Rocker&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=New+Rocker&display=swap';
 
 html, body {
     background-color: rgb(167, 201, 167);
@@ -27,7 +29,7 @@ html, body {
 
 .topnav a {
     display: block;
-    font-family: 'Press Start 2P';
+    font-family: 'MedievalSharp';
     font-size: 1rem;
     line-height: 1;
     text-transform: uppercase;
@@ -40,7 +42,7 @@ html, body {
 }
 
 .topnav a:hover {
-    background-color: rgb(157, 212, 157);
+    background-color: #9dd49d;
     color: black;
 }
 
@@ -52,33 +54,35 @@ html, body {
 body {
     padding-top: 50px;
 }
-#monsterStats {
-    font-family: 'Press Start 2p';
-    font-size: 1rem;
-    display: none;
-}
-#stats {
-    border: green;
-    color: black;
-    padding: 5px;
-}
+
 /*Paragraph explaining what the website does*/
 .hero {
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Press Start 2p';
-    font-size: 0.75rem;
+    font-family: 'MedievalSharp';
+    font-size: 2rem;
 }
-.hero p{
-    font-family: 'Press Start 2p';
-}
+
 
 
 /* Buttons on home page*/
-button {
-    height: 200%;
-    font-family: 'Press Start 2p';
-    font-size: 0.5rem;
+.frontpageButton {
+    text-align: center; /* Centers inline-level content (like buttons) horizontally */
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+.frontpageButton button{
+    font-family: 'MedievalSharp';
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin: 5px; /* Add some space between buttons if multiple */
+    border: none;
+    border-radius: 5px;
+    background-color: #4b724b;
+    color: white;
+    cursor: pointer;
 }
