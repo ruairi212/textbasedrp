@@ -5,7 +5,7 @@ html, body {
     margin: 0;
     padding: 0;
 }
-
+/* Navigation Bar*/
 .topnav {
     background-color: rgb(75, 110, 75);
     overflow: hidden;
@@ -49,11 +49,12 @@ html, body {
     color: #e0ffe0;
 }
 
-
 body {
     padding-top: 50px;
 }
 #monsterStats {
+    font-family: 'Press Start 2p';
+    font-size: 1rem;
     display: none;
 }
 #stats {
@@ -61,4 +62,23 @@ body {
     color: black;
     padding: 5px;
 }
+/*Paragraph explaining what the website does*/
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2p';
+    font-size: 0.75rem;
+}
+.hero p{
+    font-family: 'Press Start 2p';
+}
 
+
+/* Buttons on home page*/
+button {
+    height: 200%;
+    font-family: 'Press Start 2p';
+    font-size: 0.5rem;
+}
