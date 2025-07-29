@@ -1,29 +1,22 @@
 @import "https://fonts.googleapis.com/css?family=Press%20Start%202P";
 @import 'https://fonts.googleapis.com/css2?family=MedievalSharp&family=New+Rocker&display=swap';
-/* You have 'New Rocker' imported twice, can remove one */
-/* @import 'https://fonts.googleapis.com/css2?family=New+Rocker&display=swap'; */
 
 html, body {
     background-color: rgb(167, 201, 167);
     margin: 0;
     padding: 0;
-    /* Ensure body is a flex container only if you want ALL its direct children to be flex items */
-    /* If you want the main content areas to stack normally, remove display:flex from body */
 }
 
-body { /* This defines the main body styles, combining your two previous body blocks */
-    font-family: Arial, sans-serif; /* Default font, overridden by specific elements */
+body {
+    font-family: Arial, sans-serif;
     padding-top: 50px; /* Space for the fixed nav bar */
-    /* Remove display: flex; and justify-content: center; from body here
-       if you want the hero, buttons, and container to stack normally
-       and then center the container individually. This is usually cleaner. */
-    display: flex; /* Keep body as flex to control overall layout */
+    display: flex;
     flex-direction: column; /* Stack children vertically */
     align-items: center; /* Center children horizontally (including the container) */
-    min-height: 100vh; /* Ensure body takes full viewport height */
-    box-sizing: border-box; /* Include padding in element's total width/height */
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-bottom: 30px; /* Add some space at the bottom of the page */
 }
-
 
 /* Navigation Bar*/
 .topnav {
@@ -33,7 +26,7 @@ body { /* This defines the main body styles, combining your two previous body bl
     width: 100%;
     padding: 0 10px;
 
-    position: fixed; /* Stays at the top */
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -41,13 +34,13 @@ body { /* This defines the main body styles, combining your two previous body bl
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
     display: flex;
-    justify-content: flex-end; /* Aligns links to the right */
-    align-items: center; /* Vertically centers links */
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .topnav a {
     display: block;
-    font-family: 'MedievalSharp', cursive; /* Add a generic fallback */
+    font-family: 'MedievalSharp', cursive;
     font-size: 1rem;
     line-height: 1;
     text-transform: uppercase;
@@ -69,22 +62,20 @@ body { /* This defines the main body styles, combining your two previous body bl
     color: #e0ffe0;
 }
 
-
 /*Paragraph explaining what the website does*/
 .hero {
-    padding-top: 50px; /* Added extra padding here because body's padding-top pushes everything down */
-    /* If body's padding-top is enough, this might not be needed or could be adjusted */
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: 'MedievalSharp', cursive;
     font-size: 2rem;
-    text-align: center; /* Ensure text inside is centered */
-    width: 80%; /* Constrain width for better readability */
+    text-align: center;
+    width: 80%;
     max-width: 800px;
-    margin-bottom: 30px; /* Space below hero */
-    color: #333; /* Default text color */
+    margin-bottom: 30px;
+    color: #333;
 }
 
 .hero p {
@@ -94,9 +85,8 @@ body { /* This defines the main body styles, combining your two previous body bl
 
 /* Buttons on home page*/
 .frontpageButton {
-    text-align: center; /* Centers inline-level content (like buttons) horizontally */
+    text-align: center;
     padding: 20px;
-    border: 1px solid #ddd; 
     margin-top: 20px;
     margin-bottom: 50px;
 }
@@ -104,49 +94,48 @@ body { /* This defines the main body styles, combining your two previous body bl
     font-family: 'MedievalSharp', cursive;
     font-size: 1rem;
     padding: 10px 20px;
-    margin: 5px; 
+    margin: 5px;
     border: none;
     border-radius: 5px;
     background-color: #4b724b;
     color: white;
     cursor: pointer;
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.3s ease;
 }
 
 .frontpageButton button:hover {
     background-color: #6a9b6a;
 }
 
-/* Three Blocks Container */
+
+/* Three Blocks Container - Using CSS Grid */
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* Align items to the top if their content heights differ */
+    display: grid; /* Changed from flex to grid */
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+    gap: 30px; /* Space between grid items (blocks) */
 
     width: 90%;
     max-width: 1200px;
-    /* The crucial part for centering this specific container: */
-    /* Since body is display: flex; flex-direction: column; align-items: center;,
-       the container itself will be centered horizontally by the body's align-items. */
-    margin-bottom: 50px; /* Add space below the blocks */
+    /* Body's align-items: center; will still center this container */
 }
 
 .block {
-    flex: 1;
-    margin: 0 15px; /* Horizontal margin between blocks */
+    /* No flex properties needed here as Grid is handling the layout */
+    /* flex: 1; is no longer necessary as grid-template-columns handles sizing */
+    margin: 0; /* Remove individual block margins since gap handles spacing */
     padding: 25px;
     border-radius: 8px;
-    background-color: #ffffff; /* Each block has its own white background */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Slightly more prominent shadow for individual blocks */
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     color: #333;
     line-height: 1.6;
-    min-height: 250px; /* Ensure some consistent height even if content is short */
-    display: flex;
-    flex-direction: column; /* Stacks content inside the block vertically */
+    min-height: 250px; /* Still useful for visual consistency */
+    display: flex; /* Keep this to manage content *inside* the block (h2, p, ul/ol) */
+    flex-direction: column;
 }
 
 .block h2 {
-    font-family: 'MedievalSharp', cursive; /* Apply font to headings */
+    font-family: 'MedievalSharp', cursive;
     color: #0056b3;
     margin-top: 0;
     margin-bottom: 15px;
@@ -154,7 +143,7 @@ body { /* This defines the main body styles, combining your two previous body bl
 }
 
 .block h3 {
-    font-family: 'MedievalSharp', cursive; /* Apply font to subheadings */
+    font-family: 'MedievalSharp', cursive;
     color: #007bff;
     margin-top: 20px;
     margin-bottom: 10px;
@@ -178,14 +167,25 @@ body { /* This defines the main body styles, combining your two previous body bl
 }
 
 /* Specific left borders for each block */
+.block-1 {
+    border-left: 5px solid #28a745;
+}
+
+.block-2 {
+    border-left: 5px solid #007bff;
+}
+
+.block-3 {
+    border-left: 5px solid #ffc107;
+}
 
 /* Basic responsiveness for smaller screens */
 @media (max-width: 768px) {
     body {
-        padding: 15px; /* Adjust body padding for small screens */
+        padding: 15px;
     }
     .hero {
-        padding-top: 20px; /* Reduce hero padding on small screens if needed */
+        padding-top: 20px;
         font-size: 1.5rem;
     }
     .hero p {
@@ -193,16 +193,15 @@ body { /* This defines the main body styles, combining your two previous body bl
     }
 
     .container {
-        flex-direction: column; /* Stack blocks vertically */
-        align-items: center; /* Center them horizontally when stacked */
-        width: 100%; /* Container can take full width now that it has no background */
+        grid-template-columns: 1fr; /* On small screens, make it a single column */
+        gap: 20px; /* Adjust gap for vertical stacking */
+        width: 100%;
     }
 
     .block {
-        width: 100%; /* Blocks take full width when stacked */
-        margin: 15px 0; /* Vertical margin between stacked blocks */
-        min-height: auto; /* Allow height to adjust naturally */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adjust shadow for stacked blocks */
+        margin: 0; /* No horizontal margin when stacked */
+        min-height: auto;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 }
 
