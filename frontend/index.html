@@ -1,63 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>textbased</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textbased Roleplay - Create & Explore Stories</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<div class="topnav">
-    <a class="active" href="#home">Home</a>
-    <a href="./login.html">Login</a>
-    <a href="#stories">stories</a>
-    <a href="#characters">characters</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
-</div>
 <body>
-<div class="hero">
-    <h2 id="intro">Tell your story and adventure in others</h2>
-    <p >For all your homebrew or premade online fantasy roleplay</p>
-</div>
 
-<div class="frontpageButton">
-    <button id="button1">Start your journey</button>
-    <button id="button2">Seek Adventures</button>
-</div>
-    
-<div class="container">
-        <div class="block block-1">
-            <h2>Story Teller</h2>
-            <p>This is the first block of text. It contains some introductory content that describes its purpose or provides a brief overview of the information within.</p>
-            <ul>
-                <li>World building tools</li>
-                <li>Story templates & prompts</li>
-                <li>Asset library management </li>
-                
-            </ul>
-        </div>
+    <header>
+        <nav class="topnav">
+            <a class="active" href="#home-section">Home</a>
+            <a href="./login.html">Login</a>
+            <a href="#stories-section">Stories</a>
+            <a href="#characters-section">Characters</a>
+            <a href="#contact-section">Contact</a>
+            <a href="#about-section">About</a>
+        </nav>
+    </header>
 
-        <div class="block block-2">
-            <h2>Hero Creator</h2>
-            <p>This second block focuses on a different topic. It might present arguments, facts, or a continuation of a story. The design keeps it visually distinct.</p>
-            <ul>
-                <li>Detailed explanation of this key aspect.</li>
-                <li>Another important point to consider.</li>
-                <li>A third significant characteristic.</li>
-            </ul>
-        </div>
+    <main>
+        <section class="hero" id="home-section"> <h1 id="intro">Tell Your Story and Adventure in Others</h1>
+            <p>For all your homebrew or premade online fantasy roleplay</p>
+        </section>
 
-        <div class="block block-3">
-            <h2>Shared Adventures</h2>
-            <p>The third block concludes our layout example. It could be used for summaries, calls to action, or supplementary information that complements the other two blocks.</p>
-            <ul>
-                <li>Detailed explanation of this key aspect.</li>
-                <li>Another important point to consider.</li>
-                <li>A third significant characteristic.</li>
-            </ul>
-        </div>
-    </div>
+        <section class="call-to-action">
+            <div class="frontpageButton">
+                <button id="startJourneyBtn">Start Your Journey</button> <button id="seekAdventuresBtn">Seek Adventures</button>   </div>
+            <div class="register-block"> <p>Register your account here to begin managing your stories and characters</p>
+                <button id="registerAccountBtn">Register Your Account Here</button> </div>
+        </section>
+
+        <section class="features-overview" id="features-section"> <div class="container">
+                <div class="block block-1">
+                    <h2>Story Teller</h2>
+                    <p>Unlock your imagination with powerful tools designed to bring your worlds to life.</p>
+                    <ul>
+                        <li>World building tools</li>
+                        <li>Story templates & prompts</li>
+                        <li>Asset library management</li>
+                    </ul>
+                </div>
+
+                <div class="block block-2">
+                    <h2>Hero Creator</h2>
+                    <p>Craft unique characters with detailed backstories and dynamic abilities.</p>
+                    <ul>
+                        <li>Intuitive character sheet builder</li>
+                        <li>Skills and abilities editor</li>
+                        <li>Visual character customization</li>
+                    </ul>
+                </div>
+
+                <div class="block block-3">
+                    <h2>Shared Adventures</h2>
+                    <p>Connect with other players and GMs to embark on epic, collaborative adventures.</p>
+                    <ul>
+                        <li>Browse public campaigns</li>
+                        <li>Join live roleplay sessions</li>
+                        <li>Community forums & chat</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Textbased RP. All rights reserved.</p>
+    </footer>
 
 </body>
-
 </html>

@@ -1,6 +1,7 @@
 @import "https://fonts.googleapis.com/css?family=Press%20Start%202P";
 @import 'https://fonts.googleapis.com/css2?family=MedievalSharp&family=New+Rocker&display=swap';
 
+/* Basic HTML & Body Setup */
 html, body {
     background-color: rgb(167, 201, 167);
     margin: 0;
@@ -8,17 +9,17 @@ html, body {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; /* Fallback font */
     padding-top: 50px; /* Space for the fixed nav bar */
     display: flex;
     flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center children horizontally (including the container) */
-    min-height: 100vh;
-    box-sizing: border-box;
+    align-items: center; /* Center children horizontally (header, main, footer) */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    box-sizing: border-box; /* Include padding in element's total width/height */
     padding-bottom: 30px; /* Add some space at the bottom of the page */
 }
 
-/* Navigation Bar*/
+/* Navigation Bar */
 .topnav {
     background-color: rgb(75, 110, 75);
     overflow: hidden;
@@ -26,7 +27,7 @@ body {
     width: 100%;
     padding: 0 10px;
 
-    position: fixed;
+    position: fixed; /* Stays at the top */
     top: 0;
     left: 0;
     z-index: 1000;
@@ -34,17 +35,17 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: flex-end; /* Aligns links to the right */
+    align-items: center; /* Vertically centers links */
 }
 
 .topnav a {
-    display: block;
-    font-family: 'MedievalSharp', cursive;
+    display: block; /* Makes the entire link area clickable/hoverable */
+    font-family: 'MedievalSharp', cursive; /* Add a generic fallback */
     font-size: 1rem;
-    line-height: 1;
+    line-height: 1; /* Helps with vertical alignment within fixed height nav */
     text-transform: uppercase;
-    text-align: center;
+    text-align: center; /* Centers text within its own block */
 
     text-decoration: none;
     color: #e0ffe0;
@@ -62,20 +63,28 @@ body {
     color: #e0ffe0;
 }
 
-/*Paragraph explaining what the website does*/
-.hero {
-    padding-top: 50px;
+/* Main Content Area */
+main {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Stack sections vertically within main */
+    align-items: center; /* Center sections horizontally within main */
+    width: 100%; /* Main takes full width to allow its children to be centered */
+}
+
+/* Hero Section */
+.hero {
+    padding-top: 50px; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
     font-family: 'MedievalSharp', cursive;
-    font-size: 2rem;
-    text-align: center;
-    width: 80%;
+    font-size: 2rem; 
+    text-align: center; 
+    width: 80%; 
     max-width: 800px;
-    margin-bottom: 30px;
-    color: #333;
+    margin-bottom: 30px; /* Space below hero */
+    color: #333; /* Default text color */
 }
 
 .hero p {
@@ -83,18 +92,31 @@ body {
     margin-top: 10px;
 }
 
-/* Buttons on home page*/
-.frontpageButton {
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 50px;
+/* Call to Action Section */
+.call-to-action {
+    display: flex; /* Make this section a flex container */
+    flex-direction: column; /* Stack its children vertically */
+    align-items: center; /* Center its children horizontally */
+    width: 100%; /* Allow it to take full width and be centered by main */
+    max-width: 800px; /* Constrain its overall width */
+    margin-bottom: 50px; /* Space below this section */
+    box-sizing: border-box; /* Include padding in width */
+    padding: 0 20px; /* Add some horizontal padding for smaller screens */
 }
-.frontpageButton button{
+
+/* Frontpage Buttons Container */
+.frontpageButton {
+    text-align: center; /* This handles centering buttons if they are inline-block */
+    padding: 20px 0; /* Vertical padding only, horizontal padding handled by parent */
+    margin-top: 20px;
+    width: 100%; /* Take full width of its parent (.call-to-action) */
+}
+
+.frontpageButton button {
     font-family: 'MedievalSharp', cursive;
     font-size: 1rem;
     padding: 10px 20px;
-    margin: 5px;
+    margin: 5px; /* Space between buttons */
     border: none;
     border-radius: 5px;
     background-color: #4b724b;
@@ -108,20 +130,63 @@ body {
 }
 
 
-/* Three Blocks Container - Using CSS Grid */
-.container {
-    display: grid; /* Changed from flex to grid */
-    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
-    gap: 30px; /* Space between grid items (blocks) */
+.register-block { 
+    display: flex; /* Make it a flex container to center its own children */
+    flex-direction: column; /* Stack its children (p and button) vertically */
+    align-items: center; /* Center its children horizontally */
+    text-align: center; 
+    padding: 20px;
+    margin-top: 20px; 
+    width: 100%; /* Take full width of its parent (.call-to-action) */
+    max-width: 600px; /* Max width for readability */
+    box-sizing: border-box;
+    background-color: #f8f9fa; /* Added a background for visual separation */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-    width: 90%;
-    max-width: 1200px;
-    /* Body's align-items: center; will still center this container */
+.register-block p { /* Targeting the paragraph within the register-block */
+    font-family: 'MedievalSharp', cursive;
+    margin-bottom: 15px; /* Space between paragraph and button */
+    font-size: 1.1rem;
+    color: #444;
+}
+
+#registerAccountBtn { 
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1rem;
+    padding: 12px 25px; 
+    margin: 0; 
+    border: none;
+    border-radius: 5px;
+    background-color: #79a879; 
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#registerAccountBtn:hover {
+    background-color: #6a9b6a; /* Darker hover for the register button */
+}
+
+/* Features Overview Section (Three Blocks Container) */
+.features-overview { /* New section wrapping the container */
+    width: 100%; /* Allow it to be centered by main */
+    max-width: 1200px; /* Constrain its overall width */
+    margin-bottom: 50px; /* Space below this section */
+    padding: 0 20px; /* Add some horizontal padding for smaller screens */
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    /* Removed width and max-width from here as they are now on .features-overview */
+    /* The .features-overview section will be centered by main's align-items */
 }
 
 .block {
-    /* No flex properties needed here as Grid is handling the layout */
-    /* flex: 1; is no longer necessary as grid-template-columns handles sizing */
     margin: 0; /* Remove individual block margins since gap handles spacing */
     padding: 25px;
     border-radius: 8px;
@@ -129,8 +194,8 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     color: #333;
     line-height: 1.6;
-    min-height: 250px; /* Still useful for visual consistency */
-    display: flex; /* Keep this to manage content *inside* the block (h2, p, ul/ol) */
+    min-height: 250px;
+    display: flex;
     flex-direction: column;
 }
 
@@ -179,6 +244,19 @@ body {
     border-left: 5px solid #ffc107;
 }
 
+/* Footer Styling */
+footer {
+    width: 100%; /* Footer takes full width */
+    max-width: 1200px; /* Constrain its content width */
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px; /* Space above footer */
+    color: #555;
+    font-size: 0.9em;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
 /* Basic responsiveness for smaller screens */
 @media (max-width: 768px) {
     body {
@@ -192,10 +270,24 @@ body {
         font-size: 1rem;
     }
 
+    /* Adjust call-to-action for smaller screens */
+    .call-to-action {
+        padding: 0 10px; /* Reduce horizontal padding */
+    }
+
+    .frontpageButton {
+        padding: 10px 0; /* Reduce padding */
+    }
+
+    .register-block {
+        padding: 15px; /* Adjust padding */
+    }
+
     .container {
         grid-template-columns: 1fr; /* On small screens, make it a single column */
         gap: 20px; /* Adjust gap for vertical stacking */
         width: 100%;
+        padding: 0 10px; /* Add horizontal padding to the grid container */
     }
 
     .block {
