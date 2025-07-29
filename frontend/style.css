@@ -1,12 +1,30 @@
 @import "https://fonts.googleapis.com/css?family=Press%20Start%202P";
 @import 'https://fonts.googleapis.com/css2?family=MedievalSharp&family=New+Rocker&display=swap';
-@import 'https://fonts.googleapis.com/css2?family=New+Rocker&display=swap';
+/* You have 'New Rocker' imported twice, can remove one */
+/* @import 'https://fonts.googleapis.com/css2?family=New+Rocker&display=swap'; */
 
 html, body {
     background-color: rgb(167, 201, 167);
     margin: 0;
     padding: 0;
+    /* Ensure body is a flex container only if you want ALL its direct children to be flex items */
+    /* If you want the main content areas to stack normally, remove display:flex from body */
 }
+
+body { /* This defines the main body styles, combining your two previous body blocks */
+    font-family: Arial, sans-serif; /* Default font, overridden by specific elements */
+    padding-top: 50px; /* Space for the fixed nav bar */
+    /* Remove display: flex; and justify-content: center; from body here
+       if you want the hero, buttons, and container to stack normally
+       and then center the container individually. This is usually cleaner. */
+    display: flex; /* Keep body as flex to control overall layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally (including the container) */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    box-sizing: border-box; /* Include padding in element's total width/height */
+}
+
+
 /* Navigation Bar*/
 .topnav {
     background-color: rgb(75, 110, 75);
@@ -15,7 +33,7 @@ html, body {
     width: 100%;
     padding: 0 10px;
 
-    position: fixed;
+    position: fixed; /* Stays at the top */
     top: 0;
     left: 0;
     z-index: 1000;
@@ -23,13 +41,13 @@ html, body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: flex-end; /* Aligns links to the right */
+    align-items: center; /* Vertically centers links */
 }
 
 .topnav a {
     display: block;
-    font-family: 'MedievalSharp';
+    font-family: 'MedievalSharp', cursive; /* Add a generic fallback */
     font-size: 1rem;
     line-height: 1;
     text-transform: uppercase;
@@ -51,38 +69,150 @@ html, body {
     color: #e0ffe0;
 }
 
-body {
-    padding-top: 50px;
-}
 
 /*Paragraph explaining what the website does*/
 .hero {
-    padding-top: 50px;
+    padding-top: 50px; /* Added extra padding here because body's padding-top pushes everything down */
+    /* If body's padding-top is enough, this might not be needed or could be adjusted */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'MedievalSharp';
+    font-family: 'MedievalSharp', cursive;
     font-size: 2rem;
+    text-align: center; /* Ensure text inside is centered */
+    width: 80%; /* Constrain width for better readability */
+    max-width: 800px;
+    margin-bottom: 30px; /* Space below hero */
+    color: #333; /* Default text color */
 }
 
-
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
 
 /* Buttons on home page*/
 .frontpageButton {
     text-align: center; /* Centers inline-level content (like buttons) horizontally */
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #ddd; 
     margin-top: 20px;
+    margin-bottom: 50px;
 }
 .frontpageButton button{
-    font-family: 'MedievalSharp';
+    font-family: 'MedievalSharp', cursive;
     font-size: 1rem;
     padding: 10px 20px;
-    margin: 5px; /* Add some space between buttons if multiple */
+    margin: 5px; 
     border: none;
     border-radius: 5px;
     background-color: #4b724b;
     color: white;
     cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.frontpageButton button:hover {
+    background-color: #6a9b6a;
+}
+
+/* Three Blocks Container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top if their content heights differ */
+
+    width: 90%;
+    max-width: 1200px;
+    /* The crucial part for centering this specific container: */
+    /* Since body is display: flex; flex-direction: column; align-items: center;,
+       the container itself will be centered horizontally by the body's align-items. */
+    margin-bottom: 50px; /* Add space below the blocks */
+}
+
+.block {
+    flex: 1;
+    margin: 0 15px; /* Horizontal margin between blocks */
+    padding: 25px;
+    border-radius: 8px;
+    background-color: #ffffff; /* Each block has its own white background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Slightly more prominent shadow for individual blocks */
+    color: #333;
+    line-height: 1.6;
+    min-height: 250px; /* Ensure some consistent height even if content is short */
+    display: flex;
+    flex-direction: column; /* Stacks content inside the block vertically */
+}
+
+.block h2 {
+    font-family: 'MedievalSharp', cursive; /* Apply font to headings */
+    color: #0056b3;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.6em;
+}
+
+.block h3 {
+    font-family: 'MedievalSharp', cursive; /* Apply font to subheadings */
+    color: #007bff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.block p {
+    margin-bottom: 15px;
+}
+
+.block ul,
+.block ol {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-left: 25px;
+}
+
+.block ul li,
+.block ol li {
+    margin-bottom: 8px;
+}
+
+/* Specific left borders for each block */
+
+/* Basic responsiveness for smaller screens */
+@media (max-width: 768px) {
+    body {
+        padding: 15px; /* Adjust body padding for small screens */
+    }
+    .hero {
+        padding-top: 20px; /* Reduce hero padding on small screens if needed */
+        font-size: 1.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .container {
+        flex-direction: column; /* Stack blocks vertically */
+        align-items: center; /* Center them horizontally when stacked */
+        width: 100%; /* Container can take full width now that it has no background */
+    }
+
+    .block {
+        width: 100%; /* Blocks take full width when stacked */
+        margin: 15px 0; /* Vertical margin between stacked blocks */
+        min-height: auto; /* Allow height to adjust naturally */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adjust shadow for stacked blocks */
+    }
+}
+
+/* Even smaller screens (e.g., phones) */
+@media (max-width: 480px) {
+    .block {
+        padding: 15px;
+    }
+
+    .block h2 {
+        font-size: 1.4em;
+    }
 }
