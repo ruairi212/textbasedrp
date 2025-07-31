@@ -307,3 +307,44 @@ footer {
         font-size: 1.4em;
     }
 }
+
+.loginPage {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    
+    margin: 0;
+}
+.wrapper {
+    background-color: #79a879;
+    border-radius: 5px;
+    box-shadow: #333;
+    width: 400px;
+}
+h2{
+    text-align: center;
+}
+.form { 
+    padding: 30px 40px;
+}
+.form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+.form-control label {
+    color: #f8f9fa;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control input {
+    border: 2px solid;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+}
