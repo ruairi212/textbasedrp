@@ -247,7 +247,11 @@ main {
 .block-3 {
     border-left: 5px solid #ffc107;
 }
-
+/*utility classes*/
+.btn-block{
+    display: block;
+    width: 100;
+}
 /* Footer Styling */
 footer {
     width: 100%; /* Footer takes full width */
