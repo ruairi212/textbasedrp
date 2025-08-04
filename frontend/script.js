@@ -21,12 +21,7 @@ function emailValid(email){
     return re.test(String(email).toLowerCase());
 }
 function checkRequired(inputArr){
-    console.log('Variables:', {
-        username: username,
-        email: email,
-        password: password,
-        password2: password2
-    });
+
     for (const input of inputArr){
         if(input.value.trim() === '') {
             showError(input,`${getFieldName(input)} is required`);
@@ -34,6 +29,11 @@ function checkRequired(inputArr){
             showSuccess(input)
         }
     };
+}
+function checkSame(input,input2){
+    if (input.value !== input2.value){
+        showError(input2, 'Passwords must match')
+    }
 }
 function checkLength(input,min,max){
     if (input.value.length < min){
@@ -53,4 +53,5 @@ form.addEventListener('submit',function(e){
     checkRequired([username,email,password,password2]);
     checkLength(username,3,15);
     checkLength(password,6,25);
+    checkSame(password,password2)
 });
