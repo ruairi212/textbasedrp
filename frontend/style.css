@@ -401,3 +401,17 @@ h2{
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
+
+/* Character Index and chats*/
+.dashboard-btn{
+    cursor: pointer;
+    background-color: #07a52c;
+    border: 2px solid #28a745;
+    border-radius: 4px;
+    border-color: #9dd49d;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
